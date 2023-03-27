@@ -2,4 +2,12 @@
     <string name="app_name">POSapp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username_user_id">Username(User ID)</string>
+    <string name="juandelacruz123">JuanDelaCruz123</string>
+    <string name="password">Password</string>
+    <string name="password_hint">********</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="welcome_back_user">Welcome Back User!!!</string>
+    <string name="siomao_icon">Siomao_icon</string>
 </resources>

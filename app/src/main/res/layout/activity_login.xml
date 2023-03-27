@@ -14,13 +14,15 @@
             android:layout_centerVertical="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/siomao_icon"
                 app:srcCompat="@drawable/siomao_icon" />
 
             <LinearLayout
@@ -37,54 +39,63 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="25dp"
-                    android:text="Welcome Back User!!!"
-                    android:textColor="@color/red_500"
-                    android:gravity="center"
                     android:layout_marginBottom="30dp"
-                    />
+                    android:gravity="center"
+                    android:text="@string/welcome_back_user"
+                    android:textColor="@color/red_500"
+                    android:textSize="25sp" />
 
                 <TextView
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:text="Username(User ID)"/>
+                    android:text="@string/username_user_id"/>
 
                 <EditText
                     android:id="@+id/edit_username"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="JuanDelaCruz123"
+                    android:layout_height="48dp"
+                    android:hint="@string/juandelacruz123"
                     android:inputType="text"
-                    android:textColorHighlight="@color/red_500" />
+                    android:importantForAutofill="no"
+                    android:textColorHighlight="@color/red_500"
+                    tools:ignore="VisualLintTextFieldSize" />
 
                 <TextView
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:text="Password"/>
+                    android:text="@string/password"/>
 
                 <EditText
                     android:id="@+id/edit_password"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="********"
+                    android:layout_height="48dp"
+                    android:hint="@string/password_hint"
                     android:inputType="textPassword"
-                    android:textColorHighlight="@color/red_500" />
+                    android:importantForAutofill="no"
+                    android:textColorHighlight="@color/red_500"
+                    tools:ignore="VisualLintTextFieldSize" />
 
                 <Button
                     android:id="@+id/login_btn"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:backgroundTint="@color/red_500"
-                    android:text="Login"
-                    app:cornerRadius="0dp" />
+                    android:text="@string/login"
+                    app:cornerRadius="0dp"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
-
-
-
+                <Button
+                    android:id="@+id/register_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:backgroundTint="@color/red_500"
+                    android:text="@string/register"
+                    app:cornerRadius="0dp"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
 
 
             </LinearLayout>
