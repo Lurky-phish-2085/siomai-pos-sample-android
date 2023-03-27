@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +16,12 @@ import androidx.fragment.app.DialogFragment;
 
 public class ProductViewModalDialog extends DialogFragment {
 
+
+    //Jet's Testing THE ADD AND REDUCE BUTTON
+    public ImageButton dialogAddBtn;
+    public ImageButton dialogSubBtn;
+
+    //
     EditText quantity;
     SQLiteDatabase db;
     ProductViewModalDialogListener listener;
@@ -22,6 +29,9 @@ public class ProductViewModalDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.product_view_modal, null);
@@ -30,12 +40,16 @@ public class ProductViewModalDialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 // ToDo: Function na naglalgay sa cart ng item xD
+
+                System.out.println("ADDED TO CART BOI");
                 listener.applyData(quantity.getText().toString());
                 getDialog().dismiss();
             }
         });
 
         quantity = view.findViewById(R.id.editTextQuantity);
+
+
 
         builder.setView(view);
 

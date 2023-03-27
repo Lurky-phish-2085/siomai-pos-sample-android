@@ -18,6 +18,9 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     private ProductViewModel viewModel;
     public Button historyBtn;
     public ImageButton dialogBtn;
+
+    public ImageButton dialogBtn2;
+
     SQLiteDatabase db;
 
     @Override
@@ -41,6 +44,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             ProductViewModalDialog dialog = new ProductViewModalDialog();
             dialog.show(getSupportFragmentManager(), "hahahah");
         }
+
     }
 
     //Buys Siomai
