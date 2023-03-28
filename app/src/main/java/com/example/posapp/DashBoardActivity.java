@@ -16,8 +16,10 @@ import android.widget.Toast;
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener, ProductViewModalDialog.ProductViewModalDialogListener {
 
     private ProductViewModel viewModel;
-    public Button historyBtn;
+    public ImageButton historyBtn;
     public ImageButton dialogBtn;
+
+    public ImageButton cartBtn;
 
     public ImageButton dialogBtn2;
 
@@ -31,6 +33,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         historyBtn.setOnClickListener(this);
         dialogBtn = findViewById(R.id.TestClick);
         dialogBtn.setOnClickListener(this);
+        cartBtn = findViewById(R.id.cart_btn);
+        cartBtn.setOnClickListener(this);
         db = openOrCreateDatabase("TransactionDB", 0, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS Transactions(TransactionID INTEGER PRIMARY KEY AUTOINCREMENT, Product Text, Cost Double)");
     }
@@ -40,6 +44,12 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         if(v == historyBtn){
             showHistory();
         }
+
+        if(v == cartBtn){
+            CartViewModalDialog dialog = new CartViewModalDialog();
+            dialog.show(getSupportFragmentManager(), "hahaha");
+        }
+
         if(v == dialogBtn){
             ProductViewModalDialog dialog = new ProductViewModalDialog();
             dialog.show(getSupportFragmentManager(), "hahahah");

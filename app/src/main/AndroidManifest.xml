@@ -12,17 +12,20 @@
         android:theme="@style/Theme.POSapp.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".DashBoardActivity"
-            android:theme="@style/Theme.POSapp.NoActionBar"
+            android:name=".CartViewModalDialog"
             android:exported="false" />
+        <activity
+            android:name=".DashBoardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.POSapp.NoActionBar" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.POSapp.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.POSapp.NoActionBar" />
         <activity
             android:name=".StartActivity"
-            android:theme="@style/Theme.POSapp.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.POSapp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

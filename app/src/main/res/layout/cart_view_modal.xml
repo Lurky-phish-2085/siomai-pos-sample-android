@@ -5,51 +5,144 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
+
     <LinearLayout
-        android:layout_width="478dp"
-        android:layout_height="798dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:layout_margin="10dp"
+            android:textColor="@color/red_200"
+            android:text="My Cart Item(s)"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ECECEC"
+            android:layout_margin="10dp"
+            >
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight=".05"
                 app:srcCompat="@drawable/beef_icon" />
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_weight="1">
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Beef Siomai" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Quantity" />
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:textColor="#000"
+                            android:text="Beef Siomai" />
+
+
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:text="Price: Php 20.00" />
+
+                    </LinearLayout>
+                    <ImageButton
+                        android:id="@+id/history_btn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/baseline_clear_24"
+                        android:background="@color/red_200"
+                        android:scaleType="fitCenter"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Quantity" />
+                    android:orientation="horizontal"
+
+                    >
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:text="Ava: 5" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_marginHorizontal="15dp">
+
+                        <ImageButton
+                            android:onClick="onClick"
+                            android:id="@+id/btnSub"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/baseline_horizontal_rule_24" />
+
+                        <EditText
+                            android:id="@+id/editTextQuantity"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:text="0"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                        <ImageButton
+                            android:onClick="onClick"
+                            android:id="@+id/btnAdd"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/baseline_add_24" />
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
 
 
             </LinearLayout>

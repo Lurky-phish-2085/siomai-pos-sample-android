@@ -27,9 +27,9 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_margin="10dp"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 app:srcCompat="@drawable/siomao_icon" />
 
             <TextView
@@ -42,13 +42,24 @@
                 android:textColor="@color/red_200"
                 android:textSize="30dp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/history_btn"
-                android:backgroundTint="@color/red_500"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2"
-                android:text="H" />
+                android:src="@drawable/baseline_history_24"
+                style="?android:attr/borderlessButtonStyle"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                />
+
+
+<!--            <Button-->
+<!--                android:id="@+id/history_btn"-->
+<!--                android:backgroundTint="@color/red_500"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="0.2"-->
+<!--                android:text="H" />-->
 
         </LinearLayout>
 
@@ -140,4 +151,17 @@
 
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cart_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/red_500"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:tint="@color/white"
+        android:src="@drawable/baseline_shopping_cart_24" />
+
 </RelativeLayout>
