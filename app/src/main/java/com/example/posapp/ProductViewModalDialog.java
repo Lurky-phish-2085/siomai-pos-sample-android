@@ -48,8 +48,24 @@ public class ProductViewModalDialog extends DialogFragment {
         });
 
         quantity = view.findViewById(R.id.editTextQuantity);
+        dialogAddBtn = view.findViewById(R.id.btnAdd);
+        dialogSubBtn = view.findViewById(R.id.btnSub);
 
+        dialogAddBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                quantity.setText(String.valueOf(Integer.valueOf(quantity.getText().toString()) + 1));
+            }
+        });
 
+        dialogSubBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int qty = Integer.valueOf(quantity.getText().toString());
+                if (qty <= 0) return;
+                quantity.setText(String.valueOf(Integer.valueOf(quantity.getText().toString()) - 1));
+            }
+        });
 
         builder.setView(view);
 
