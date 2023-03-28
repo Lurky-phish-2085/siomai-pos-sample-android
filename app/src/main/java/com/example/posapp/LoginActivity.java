@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.posapp.debugDisplayFunctions.Displays;
+import com.example.posapp.queries.GeneralQueries;
 import com.example.posapp.queries.UserData;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -36,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         register = findViewById(R.id.register_btn);
         register.setOnClickListener(this);
 
-        db = openOrCreateDatabase("PosDB", Context.MODE_PRIVATE, null);
+        db = openOrCreateDatabase(GeneralQueries.DataBaseName, Context.MODE_PRIVATE, null);
 //        db.execSQL(UserData.createTable());
         db.execSQL(createTable());
     }
