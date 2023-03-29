@@ -20,8 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CartViewModalDialog extends DialogFragment {
-
-    //
     EditText quantity;
     SQLiteDatabase db;
 
@@ -39,9 +37,8 @@ public class CartViewModalDialog extends DialogFragment {
         View view = inflater.inflate(R.layout.cart_view_modal, null);
         builder.setView(view);
 
-        //Recyler Functions Pls Check
         initData();
-        initRecyclerView();
+        initRecyclerView(view);
 
         return builder.create();
     }
@@ -52,9 +49,9 @@ public class CartViewModalDialog extends DialogFragment {
         itemList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 50));
     }
 
-    private void initRecyclerView() {
-        recyclerView = getActivity().findViewById(R.id.recycler_view);
-        layoutManager = new LinearLayoutManager(getActivity());
+    private void initRecyclerView(View view) {
+        recyclerView = view.findViewById(R.id.recycler_view);
+        layoutManager = new LinearLayoutManager(view.getContext());
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         adapter = new CartAdapter(itemList);
 
@@ -62,7 +59,4 @@ public class CartViewModalDialog extends DialogFragment {
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
-
-
-
 }
