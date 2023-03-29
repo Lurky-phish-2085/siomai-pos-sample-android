@@ -13,12 +13,20 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CartViewModalDialog extends DialogFragment {
-
-    //
     EditText quantity;
     SQLiteDatabase db;
+
+    RecyclerView recyclerView;
+    LinearLayoutManager layoutManager;
+    List<CartModel> itemList;
+    CartAdapter adapter;
 
     @NonNull
     @Override
@@ -27,13 +35,28 @@ public class CartViewModalDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.cart_view_modal, null);
-
-
         builder.setView(view);
+
+        initData();
+        initRecyclerView(view);
 
         return builder.create();
     }
 
+    private void initData() {
+        itemList = new ArrayList<>();
+        itemList.add(new CartModel(R.drawable.beef_icon, "Beef Siomai", 20.00, 50));
+        itemList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 50));
+    }
 
+    private void initRecyclerView(View view) {
+        recyclerView = view.findViewById(R.id.recycler_view);
+        layoutManager = new LinearLayoutManager(view.getContext());
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        adapter = new CartAdapter(itemList);
 
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+    }
 }
