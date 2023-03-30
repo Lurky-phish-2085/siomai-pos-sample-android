@@ -19,13 +19,12 @@
             android:background="#ECECEC"
             >
 
-            <ImageView
-                android:id="@+id/cart_image_view_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/beef_icon" />
-
+                <ImageView
+                    android:id="@+id/cart_image_view_1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/beef_icon" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -54,22 +53,37 @@
 
 
 
-                        <TextView
-                            android:id="@+id/cart_price_textview"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:textColor="#000"
-                            android:textSize="15dp"
-                            android:text="Price: Php 20.00" />
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/text_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#000"
+                                android:textSize="15dp"
+                                android:text="Price: Php " />
+                            <TextView
+                                android:id="@+id/cart_price_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#000"
+                                android:textSize="15dp"
+                                android:text="20.00" />
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
                     <ImageButton
-                        android:id="@+id/remove_button"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:id="@+id/remove_Cart"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:src="@drawable/baseline_clear_24"
-                        android:background="@color/red_200"
+                        android:background="#ECECEC"
                         android:scaleType="fitCenter"
                         />
 
@@ -81,34 +95,47 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-
+                    android:gravity="center|right"
                     >
-                    <TextView
-                        android:id="@+id/cart_total_qty_textview"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="18dp"
-                        android:textColor="#000"
-                        android:text="Ava: 5" />
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/text_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:text="Stock: " />
+                        <TextView
+                            android:id="@+id/cart_total_qty_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:text="20" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
                         android:layout_marginHorizontal="15dp">
 
                         <ImageButton
-                            android:id="@+id/btnSub"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:scaleType="fitCenter"
+                            android:id="@+id/cartBtnSub"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:scaleType="centerCrop"
                             app:srcCompat="@drawable/baseline_horizontal_rule_24" />
 
                         <EditText
-                            android:id="@+id/editTextQuantity"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/cart_quantity"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_weight="1"
                             android:ems="10"
                             android:gravity="center"
@@ -117,10 +144,10 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <ImageButton
-                            android:id="@+id/btnAdd"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:scaleType="fitCenter"
+                            android:id="@+id/cartBtnAdd"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:scaleType="centerCrop"
                             app:srcCompat="@drawable/baseline_add_24" />
 
 

@@ -19,13 +19,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartViewModalDialog extends DialogFragment {
+public class CartViewModalDialog extends DialogFragment implements RecyclerViewInterface {
     EditText quantity;
     SQLiteDatabase db;
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    List<CartModel> itemList;
+    List<CartModel> cartList;
     CartAdapter adapter;
 
     @NonNull
@@ -44,19 +44,49 @@ public class CartViewModalDialog extends DialogFragment {
     }
 
     private void initData() {
-        itemList = new ArrayList<>();
-        itemList.add(new CartModel(R.drawable.beef_icon, "Beef Siomai", 20.00, 50));
-        itemList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 50));
+        cartList = new ArrayList<>();
+        cartList.add(new CartModel(R.drawable.beef_icon, "Beef Siomai", 20.00, 1, 13));
+        cartList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 1, 43));
+        cartList.add(new CartModel(R.drawable.pork_icon, "Pork Siomai", 15.00, 2, 53));
+
+        cartList.add(new CartModel(R.drawable.beef_icon, "Beef Siomai", 20.00, 1, 13));
+        cartList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 1, 43));
+        cartList.add(new CartModel(R.drawable.pork_icon, "Pork Siomai", 15.00, 2, 53));
+
+        cartList.add(new CartModel(R.drawable.beef_icon, "Beef Siomai", 20.00, 1, 13));
+        cartList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 1, 43));
+        cartList.add(new CartModel(R.drawable.pork_icon, "Pork Siomai", 15.00, 2, 53));
     }
 
     private void initRecyclerView(View view) {
         recyclerView = view.findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(view.getContext());
         layoutManager.setOrientation(RecyclerView.VERTICAL);
-        adapter = new CartAdapter(itemList);
+        //added context in the constructor don't know why? pls know - jet
+        adapter = new CartAdapter(view.getContext(), cartList, this);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onBtnClick(int position, String function) {
+        if(function == "addQty"){
+            System.out.println("Add more Qty");
+            cartList.get(position).addQuantity();
+        }
+
+        if(function == "subQty"){
+            System.out.println("Sub more Qty");
+            cartList.get(position).subQuantity();
+        }
+
+        if(function == "removeCart"){
+            System.out.println("Remove Cart");
+            cartList.remove(position);
+        }
+        adapter.notifyDataSetChanged();
+
     }
 }
