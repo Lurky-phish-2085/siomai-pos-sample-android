@@ -51,7 +51,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         }
 
         if(v == dialogBtn){
-            ProductViewModalDialog dialog = new ProductViewModalDialog();
+            ProductViewModalDialog dialog = new ProductViewModalDialog(R.drawable.beef_icon, "Beef Flavor", 20.00, 30);
             dialog.show(getSupportFragmentManager(), "hahahah");
         }
 

@@ -44,26 +44,26 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     public class ViewHolder extends  RecyclerView.ViewHolder {
 
-        private ImageView itemImageView;
-        private TextView itemFlavorView;
-        private TextView itemPriceView;
-        private TextView itemTotalQuantityView;
+        private ImageView cartImageView;
+        private TextView cartFlavorView;
+        private TextView cartPriceView;
+        private TextView cartTotalQuantityView;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            itemImageView = itemView.findViewById(R.id.item_image_view_1);
-            itemFlavorView = itemView.findViewById(R.id.flavor_textview);
-            itemPriceView = itemView.findViewById(R.id.price_textview);
-            itemTotalQuantityView = itemView.findViewById(R.id.total_qty_textview);
+            cartImageView = itemView.findViewById(R.id.cart_image_view_1);
+            cartFlavorView = itemView.findViewById(R.id.cart_flavor_textview);
+            cartPriceView = itemView.findViewById(R.id.cart_price_textview);
+            cartTotalQuantityView = itemView.findViewById(R.id.cart_total_qty_textview);
         }
 
         public void setData(int itemImage, String flavor, double price, int totalQuantity) {
-            itemImageView.setImageResource(itemImage);
-            itemFlavorView.setText(flavor);
-            itemPriceView.setText(Double.toString(price));
-            itemTotalQuantityView.setText(Integer.toString(totalQuantity));
+            cartImageView.setImageResource(itemImage);
+            cartFlavorView.setText(flavor);
+            cartPriceView.setText(Double.toString(price));
+            cartTotalQuantityView.setText(Integer.toString(totalQuantity));
         }
     }
 }

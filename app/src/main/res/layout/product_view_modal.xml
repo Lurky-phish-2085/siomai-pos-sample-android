@@ -16,7 +16,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 app:srcCompat="@drawable/beef_icon" />
@@ -27,6 +27,7 @@
                 android:orientation="horizontal"
                 >
                 <TextView
+                    android:id="@+id/flavorView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="22dp"
@@ -35,6 +36,7 @@
                     android:layout_margin="10dp"/>
 
                 <TextView
+                    android:id="@+id/priceView"
                     android:gravity="right"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -46,6 +48,15 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/totalQuantityView"
+                android:gravity="left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:text="Total stock left: 29"
+                android:layout_marginHorizontal="10dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

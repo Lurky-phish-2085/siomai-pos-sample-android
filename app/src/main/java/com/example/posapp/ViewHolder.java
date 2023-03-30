@@ -16,9 +16,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
     public ViewHolder(@NonNull View itemView) {
         super(itemView);
-        itemImageView = itemView.findViewById(R.id.item_image_view_1);
-        itemFlavorView = itemView.findViewById(R.id.flavor_textview);
-        itemPriceView = itemView.findViewById(R.id.price_textview);
-        itemTotalQuantityView = itemView.findViewById(R.id.total_qty_textview);
+        itemImageView = itemView.findViewById(R.id.cart_image_view_1);
+        itemFlavorView = itemView.findViewById(R.id.cart_flavor_textview);
+        itemPriceView = itemView.findViewById(R.id.cart_price_textview);
+        itemTotalQuantityView = itemView.findViewById(R.id.cart_total_qty_textview);
     }
 }

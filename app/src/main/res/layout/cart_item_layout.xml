@@ -20,7 +20,7 @@
             >
 
             <ImageView
-                android:id="@+id/item_image_view_1"
+                android:id="@+id/cart_image_view_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
@@ -44,7 +44,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/flavor_textview"
+                            android:id="@+id/cart_flavor_textview"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -55,7 +55,7 @@
 
 
                         <TextView
-                            android:id="@+id/price_textview"
+                            android:id="@+id/cart_price_textview"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -84,7 +84,7 @@
 
                     >
                     <TextView
-                        android:id="@+id/total_qty_textview"
+                        android:id="@+id/cart_total_qty_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
