@@ -72,76 +72,15 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <LinearLayout
-
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/item_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    >
 
 
-                    <LinearLayout
-                        android:id="@+id/TestClick2"
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        android:layout_margin="10dp"
-                        android:background="#fff"
-                        android:clickable="true"
-                        android:orientation="vertical">
+                </androidx.recyclerview.widget.RecyclerView>
 
-
-                        <ImageButton
-                            android:id="@+id/TestClick"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight=".5"
-                            android:src="@drawable/beef_icon"
-                            style="?android:attr/borderlessButtonStyle"
-                            />
-                        <TextView
-                            android:layout_marginLeft="10dp"
-                            android:id="@+id/textView52"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="20dp"
-                            android:textColor="#000"
-                            android:text="Beef Siomai" />
-
-                        <TextView
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:textColor="#000"
-                            android:id="@+id/textView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="20dp"
-                            android:text="Php 25.00" />
-
-
-                    </LinearLayout>
-
-
-
-
-
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-
-
-
-
-
-
-
-                </LinearLayout>
 
 
             </LinearLayout>

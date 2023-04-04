@@ -2,19 +2,22 @@ package com.example.posapp;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.posapp.Adapter.CartAdapter;
+import com.example.posapp.Interface.RecyclerViewInterface;
+import com.example.posapp.Model.Cart;
+import com.example.posapp.Model.Siomai_Inventory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,7 @@ public class CartViewModalDialog extends DialogFragment implements RecyclerViewI
 
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
-    List<CartModel> cartList;
+    List<Cart> cartList;
     CartAdapter adapter;
 
     @NonNull
@@ -45,17 +48,8 @@ public class CartViewModalDialog extends DialogFragment implements RecyclerViewI
 
     private void initData() {
         cartList = new ArrayList<>();
-        cartList.add(new CartModel(R.drawable.beef_icon, "Beef Siomai", 20.00, 1, 13));
-        cartList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 1, 43));
-        cartList.add(new CartModel(R.drawable.pork_icon, "Pork Siomai", 15.00, 2, 53));
+        cartList.add(new Cart("Beef Siomai", R.drawable.beef_icon, 20.00, 1));
 
-        cartList.add(new CartModel(R.drawable.beef_icon, "Beef Siomai", 20.00, 1, 13));
-        cartList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 1, 43));
-        cartList.add(new CartModel(R.drawable.pork_icon, "Pork Siomai", 15.00, 2, 53));
-
-        cartList.add(new CartModel(R.drawable.beef_icon, "Beef Siomai", 20.00, 1, 13));
-        cartList.add(new CartModel(R.drawable.crab_icon, "Crab Siomai", 25.00, 1, 43));
-        cartList.add(new CartModel(R.drawable.pork_icon, "Pork Siomai", 15.00, 2, 53));
     }
 
     private void initRecyclerView(View view) {
@@ -63,7 +57,7 @@ public class CartViewModalDialog extends DialogFragment implements RecyclerViewI
         layoutManager = new LinearLayoutManager(view.getContext());
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         //added context in the constructor don't know why? pls know - jet
-        adapter = new CartAdapter(view.getContext(), cartList, this);
+        adapter = new CartAdapter(view.getContext(), this);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -71,22 +65,27 @@ public class CartViewModalDialog extends DialogFragment implements RecyclerViewI
     }
 
     @Override
-    public void onBtnClick(int position, String function) {
-        if(function == "addQty"){
-            System.out.println("Add more Qty");
-            cartList.get(position).addQuantity();
-        }
+    public void onBtnClick(int position) {
+//        if(function == "addQty"){
+//            System.out.println("Add more Qty");
+//            cartList.get(position).addQuantity();
+//        }
+//
+//        if(function == "subQty"){
+//            System.out.println("Sub more Qty");
+//            cartList.get(position).subQuantity();
+//        }
+//
+//        if(function == "removeCart"){
+//            System.out.println("Remove Cart");
+//            cartList.remove(position);
+//        }
+//        adapter.notifyDataSetChanged();
 
-        if(function == "subQty"){
-            System.out.println("Sub more Qty");
-            cartList.get(position).subQuantity();
-        }
+    }
 
-        if(function == "removeCart"){
-            System.out.println("Remove Cart");
-            cartList.remove(position);
-        }
-        adapter.notifyDataSetChanged();
+    @Override
+    public void onAddToCart(Cart cart) {
 
     }
 }

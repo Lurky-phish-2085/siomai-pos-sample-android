@@ -16,8 +16,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.posapp.Interface.RecyclerViewInterface;
+import com.example.posapp.Model.Cart;
+import com.example.posapp.Model.Siomai_Inventory;
+
 public class ProductViewModalDialog extends DialogFragment {
 
+
+    RecyclerViewInterface recyclerViewInterface;
 
     // Getting the id from the product view modal
     private ImageView imageView;
@@ -40,13 +46,14 @@ public class ProductViewModalDialog extends DialogFragment {
     SQLiteDatabase db;
     ProductViewModalDialogListener listener;
 
-    public ProductViewModalDialog(int image, String flavor, double price, int totalQuantity){
+    public ProductViewModalDialog(int image, String flavor, double price, int totalQuantity, RecyclerViewInterface recyclerViewInterface){
         super();
         this.image = image;
         this.flavor = flavor;
         this.price = price;
         this.totalQuantity = totalQuantity;
 
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
 
@@ -63,9 +70,10 @@ public class ProductViewModalDialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 // ToDo: Function na naglalgay sa cart ng item xD
-
                 System.out.println("ADDED TO CART BOI");
                 listener.applyData(quantity.getText().toString());
+                Cart cart = new Cart(flavor, image,price, Integer.parseInt(quantity.getText().toString()));
+                recyclerViewInterface.onAddToCart(cart);
                 getDialog().dismiss();
             }
         });

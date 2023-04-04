@@ -1,4 +1,4 @@
-package com.example.posapp;
+package com.example.posapp.Adapter;
 
 
 import android.content.Context;
@@ -13,6 +13,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.posapp.Model.Cart;
+import com.example.posapp.R;
+import com.example.posapp.Interface.RecyclerViewInterface;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
@@ -22,11 +27,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     //I need for some reason pls find the reason -jet
     Context context;
-    private List<CartModel> cartList;
+    private List<Cart> cartList =  new ArrayList<>();
 
-    public CartAdapter(Context context, List<CartModel> cartList, RecyclerViewInterface recyclerViewInterface) {
+    public CartAdapter(Context context,  RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
-        this.cartList = cartList;
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
@@ -39,13 +43,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CartAdapter.ViewHolder holder, int position) {
-        int cartImage = cartList.get(position).getImageItemView();
-        String flavor = cartList.get(position).getFlavorTextView();
-        double price = cartList.get(position).getPriceTextView();
-        int quantity = cartList.get(position).getQuantityTextView();
-        int totalQuantity = cartList.get(position).getTotalQuantityTextView();
-
+        int cartImage = cartList.get(position).getProduct_img();
+        String flavor = cartList.get(position).getProduct_name();
+        double price = cartList.get(position).getPrice();
+        int quantity = cartList.get(position).getQuantity();
+        int totalQuantity = cartList.get(position).getQuantity();
         holder.setData(cartImage, flavor, price,quantity , totalQuantity);
+    }
+
+    public void setItems(List<Cart> cartList) {
+        this.cartList = cartList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -86,14 +94,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                     //add this Boilerplate for filter and error handling
                     //if (recyclerViewInterface != null) &&  (pos != RecyclerView.NO_POSITION)
                     int pos = getLayoutPosition();
-                    recyclerViewInterface.onBtnClick(pos, "addQty");
+                    recyclerViewInterface.onBtnClick(pos);
                 }
             });
             cartSubBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int pos = getLayoutPosition();
-                    recyclerViewInterface.onBtnClick(pos, "subQty");
+                    recyclerViewInterface.onBtnClick(pos);
                 }
             });
 
@@ -101,7 +109,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 @Override
                 public void onClick(View view) {
                     int pos = getLayoutPosition();
-                    recyclerViewInterface.onBtnClick(pos, "removeCart");
+                    recyclerViewInterface.onBtnClick(pos);
                 }
             });
         }
