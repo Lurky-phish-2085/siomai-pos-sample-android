@@ -66,6 +66,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
 
 
         siomaiViewModel = new ViewModelProvider(this).get(SiomaiViewModel.class);
+        cartViewModel = new ViewModelProvider(this).get(CartViewModel.class);
         siomaiViewModel.getAllSiomai().observe(this, new Observer<List<Siomai_Inventory>>() {
             @Override
             public void onChanged(List<Siomai_Inventory> items) {
@@ -138,7 +139,10 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
 
 
     public void onAddToCart(Cart cart) {
+
         System.out.println("ADDING FUNCTION!!");
+        System.out.println(cart);
+        System.out.println("MMMMMMM FUNCTION!!");
         cartViewModel.insert(cart);
     }
 }

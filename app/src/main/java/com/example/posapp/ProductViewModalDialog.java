@@ -72,8 +72,7 @@ public class ProductViewModalDialog extends DialogFragment {
                 // ToDo: Function na naglalgay sa cart ng item xD
                 System.out.println("ADDED TO CART BOI");
                 listener.applyData(quantity.getText().toString());
-                Cart cart = new Cart(flavor, image,price, Integer.parseInt(quantity.getText().toString()));
-                recyclerViewInterface.onAddToCart(cart);
+                recyclerViewInterface.onAddToCart(new Cart(flavor, image,price, Integer.parseInt(quantity.getText().toString())));
                 getDialog().dismiss();
             }
         });

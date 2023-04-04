@@ -24,6 +24,8 @@ public class CartViewModel extends AndroidViewModel {
     }
 
     public void insert(Cart cart) {
+        System.out.println("From View Model");
+        System.out.println(cart);
         mainRepository.insert(cart);
     }
 
